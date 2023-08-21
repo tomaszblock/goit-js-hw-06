@@ -6,12 +6,12 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-
+const result = [];
 for (const i of ingredients) {
-  console.log(i);
-  const parent = document.querySelector("#ingredients");
   const newElement = document.createElement("li");
   newElement.classList.add("item");
   newElement.textContent = i;
-  parent.append(newElement);
+  result.push(newElement);
 }
+const parent = document.querySelector("#ingredients");
+parent.append(...result);
