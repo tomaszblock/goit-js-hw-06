@@ -13,4 +13,30 @@ const images = [
   },
 ];
 
-console.log(images[0].url);
+// option 1
+
+// const parent = document.querySelector(".gallery");
+// for (const i of images) {
+//   const newList = document.createElement("li");
+//   parent.append(newList);
+//   const element = parent.lastElementChild;
+//   const newImg = document.createElement("img");
+//   newImg.src = i.url;
+//   newImg.alt = i.alt;
+//   element.append(newImg);
+// }
+// console.log(parent);
+
+//option 2
+
+const parent = document.querySelector(".gallery");
+for (const i of images) {
+  const element = `<li><img src="${i.url}" alt="${i.alt}"></li>`;
+  console.log(element);
+  parent.insertAdjacentHTML("beforeend", element);
+}
+parent.style.display = "flex";
+parent.style.alignItems = "center";
+parent.style.flexDirection = "column";
+parent.style.gap = "30px";
+console.log(parent);
