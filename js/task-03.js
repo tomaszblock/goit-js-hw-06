@@ -20,8 +20,6 @@ const test = images.map((ele) => {
   const imgEle = `<li><img src="${ele.url}" alt="${ele.alt}"></li>`;
   parent.insertAdjacentHTML("beforeend", imgEle);
 });
-const imgStyle = document.querySelectorAll("img");
-console.log(imgStyle);
 
 // option 2
 
