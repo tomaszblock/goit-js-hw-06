@@ -12,8 +12,18 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+// Option 1
 
-// option 1
+const parent = document.querySelector(".gallery");
+console.log(parent);
+const test = images.map((ele) => {
+  const imgEle = `<li><img src="${ele.url}" alt="${ele.alt}"></li>`;
+  parent.insertAdjacentHTML("beforeend", imgEle);
+});
+const imgStyle = document.querySelectorAll("img");
+console.log(imgStyle);
+
+// option 2
 
 // const parent = document.querySelector(".gallery");
 // for (const i of images) {
@@ -27,16 +37,16 @@ const images = [
 // }
 // console.log(parent);
 
-//option 2
+//option 3
 
-const parent = document.querySelector(".gallery");
-for (const i of images) {
-  const element = `<li><img src="${i.url}" alt="${i.alt}"></li>`;
-  console.log(element);
-  parent.insertAdjacentHTML("beforeend", element);
-}
-parent.style.display = "flex";
-parent.style.alignItems = "center";
-parent.style.flexDirection = "column";
-parent.style.gap = "30px";
-console.log(parent);
+// const parent = document.querySelector(".gallery");
+// for (const i of images) {
+//   const element = `<li><img src="${i.url}" alt="${i.alt}"></li>`;
+//   console.log(element);
+//   parent.insertAdjacentHTML("beforeend", element);
+// }
+// parent.style.display = "flex";
+// parent.style.alignItems = "center";
+// parent.style.flexDirection = "column";
+// parent.style.gap = "30px";
+// console.log(parent);
