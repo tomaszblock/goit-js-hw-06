@@ -17,9 +17,11 @@ const images = [
 const parent = document.querySelector(".gallery");
 console.log(parent);
 const test = images.map((ele) => {
-  const imgEle = `<li><img src="${ele.url}" alt="${ele.alt}"></li>`;
+  const imgEle = `<li><img src="${ele.url}" class="test" alt="${ele.alt}"></li>`;
   parent.insertAdjacentHTML("beforeend", imgEle);
 });
+const imgClass = document.querySelector(".test");
+imgClass.style.width = "200px";
 
 // option 2
 
