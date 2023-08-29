@@ -14,14 +14,17 @@ const images = [
 ];
 // Option 1
 
-const parent = document.querySelector(".gallery");
-console.log(parent);
-const test = images.map((ele) => {
-  const imgEle = `<li><img src="${ele.url}" class="test" alt="${ele.alt}"></li>`;
-  parent.insertAdjacentHTML("beforeend", imgEle);
-});
-const imgClass = document.querySelector(".test");
-imgClass.style.width = "200px";
+const parent = document.querySelector(".gallery")
+
+const test = images.map((ele) => `<li><img src="${ele.url}" class="size" alt="${ele.alt}"></li>`).join("")
+console.log(test)
+parent.insertAdjacentHTML("afterbegin", test)
+
+const imgClass = document.querySelectorAll(".size");
+imgClass.forEach(element => element.style.width = "300px");
+imgClass.forEach(element => element.style.display = "flex");
+imgClass.forEach(element => element.style.padding = "25px");
+
 
 // option 2
 

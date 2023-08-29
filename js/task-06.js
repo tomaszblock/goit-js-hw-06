@@ -1,19 +1,19 @@
-const inputText = document.querySelector("#validation-input")
-const minLength = document.querySelector("input[data-length]").dataset.length
+const textInput = document.querySelector("#validation-input")
+const minLength = textInput.dataset.length
 console.log(length)
 
 
 
-inputText.addEventListener("blur", (event) => {
+textInput.addEventListener("blur", (event) => {
 const value = event.currentTarget.value
 if(value.length >= minLength) {
-    inputText.classList.remove("invalid")
-inputText.classList.add("valid")
-console.log(inputText)
+    textInput.classList.remove("invalid")
+    textInput.classList.add("valid")
+console.log(textInput)
 }
 else {
-    inputText.classList.remove("valid")
-inputText.classList.add("invalid")
-console.log(inputText)
+    textInput.classList.remove("valid")
+    textInput.classList.add("invalid")
+console.log(textInput)
 }
 })  
