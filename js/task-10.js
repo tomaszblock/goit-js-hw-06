@@ -4,6 +4,9 @@ const destroyButton = document.querySelector("button[data-destroy]");
 const box = document.querySelector("#boxes");
 createButton.addEventListener("click", createBoxes);
 let result = 0;
+const min = inputWindow.getAttribute("min");
+const max = inputWindow.getAttribute("max");
+const test = document.querySelector("#controls");
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -15,34 +18,40 @@ function createBoxes() {
   const amount = inputWindow.value;
   const firstBox = document.createElement("div");
   let border = 30;
-  if (amount > 0 && result === 0) {
-    firstBox;
-    firstBox.style.backgroundColor = getRandomHexColor();
-    firstBox.style.width = "30px";
-    firstBox.style.height = "30px";
-    // firstBox.setAttribute("data-id", "1");
-    box.append(firstBox);
-    result++
-  }
-  if (amount > 1) {
-    for (let i = 1; i < amount; i++) {
-      const nextBox = document.createElement("div");
-      // const test1 = document.querySelector('[data-id="' + selector + '"]');
+  if (amount < Number(min) || amount > Number(max)) {
+    inputWindow.style.borderColor = "red";
+  } else {
+    const deleteError = document.querySelector("#errorid");
+    deleteError.remove();
+    inputWindow.style.borderColor = "black";
 
-      border += 10;
-      nextBox;
-      nextBox.style.backgroundColor = getRandomHexColor();
-      nextBox.style.width = border + "px";
-      nextBox.style.height = border + "px";
-      box.append(nextBox);
+    if (amount > 0 && result === 0) {
+      firstBox;
+      firstBox.style.backgroundColor = getRandomHexColor();
+      firstBox.style.width = "30px";
+      firstBox.style.height = "30px";
+      // firstBox.setAttribute("data-id", "1");
+      box.append(firstBox);
       result++;
-      console.log(result)
+    }
+    if (amount > 1) {
+      for (let i = 1; i < amount; i++) {
+        const nextBox = document.createElement("div");
+        // const test1 = document.querySelector('[data-id="' + selector + '"]');
 
-      // console.log(test2);
-      // console.log(test3);
-      // console.log(test4);
+        border += 10;
+        nextBox;
+        nextBox.style.backgroundColor = getRandomHexColor();
+        nextBox.style.width = border + "px";
+        nextBox.style.height = border + "px";
+        box.append(nextBox);
+        result++;
+        console.log(result);
+
+        // console.log(test2);
+        // console.log(test3);
+        // console.log(test4);
+      }
     }
   }
 }
-
-
