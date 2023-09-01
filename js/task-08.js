@@ -10,8 +10,6 @@ function validation(event) {
   const email = form.elements.email.value;
   const password = form.elements.password.value;
   if (email === "" || password === "") {
-    //wiem, że chodziło tu o bład w konsoli console.log("text") ale chciałem poeksperymentować :P
-    // nie wiedziałem tylko jak kolor placeholdera zmienić poprzez JSa
     emailInput.setAttribute("placeholder", "Fill it!");
     passwordInput.setAttribute("placeholder", "Fill it!");
   } else {
@@ -19,5 +17,7 @@ function validation(event) {
     result.password = password;
     console.log(result);
     form.reset();
+    emailInput.removeAttribute("placeholder");
+    passwordInput.removeAttribute("placeholder");
   }
 }

@@ -16,9 +16,9 @@ const images = [
 
 const parent = document.querySelector(".gallery")
 
-const test = images.map((ele) => `<li><img src="${ele.url}" class="size" alt="${ele.alt}"></li>`).join("")
-console.log(test)
-parent.insertAdjacentHTML("afterbegin", test)
+const elements = images.map((ele) => `<li><img src="${ele.url}" class="size" alt="${ele.alt}"></li>`).join("")
+console.log(elements)
+parent.insertAdjacentHTML("afterbegin", elements)
 
 const imgClass = document.querySelectorAll(".size");
 imgClass.forEach(element => element.style.width = "300px");
